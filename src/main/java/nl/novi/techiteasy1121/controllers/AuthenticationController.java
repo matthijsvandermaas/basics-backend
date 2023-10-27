@@ -1,7 +1,6 @@
 package nl.novi.techiteasy1121.controllers;
 
 import nl.novi.techiteasy1121.dtos.AuthenticationRequest;
-import nl.novi.techiteasy1121.dtos.AuthenticationResponse;
 import nl.novi.techiteasy1121.services.CustomUserDetailsService;
 import nl.novi.techiteasy1121.utils.JwtUtil;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +29,6 @@ public class AuthenticationController {
         this.jwtUtl = jwtUtl;
     }
 
-
     /*
         Deze methode geeft de principal (basis user gegevens) terug van de ingelogde gebruiker
     */
@@ -40,8 +38,7 @@ public class AuthenticationController {
     }
 
     /*
-    Deze methode geeft het JWT token terug wanneer de gebruiker de juiste inloggegevens op geeft.
-     */
+    Deze methode geeft het JWT token terug */
     @PostMapping(value = "/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 
